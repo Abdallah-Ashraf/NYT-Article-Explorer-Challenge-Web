@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Article Explorer</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body class="container mt-4">
+
+<h1 class="text-center">NYT Article Explorer</h1>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="favorites.html">Favorites</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Search Form -->
+<div class="input-group my-4">
+    <input type="text" id="searchQuery" class="form-control" placeholder="Search for articles...">
+    <button class="btn btn-primary" onclick="searchArticles()">Search</button>
+</div>
+
+<!-- Search Results -->
+<div id="articles" class="row"></div>
+
+<!-- Pagination Controls -->
+<nav>
+    <ul class="pagination mt-4">
+        <li class="page-item">
+            <button class="page-link" id="prevPageBtn" onclick="changePage('prev')" disabled>Previous</button>
+        </li>
+        <li class="page-item">
+            <button class="page-link" id="nextPageBtn" onclick="changePage('next')">Next</button>
+        </li>
+    </ul>
+</nav>
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="loginUsername" class="form-control mb-2" placeholder="Username">
+                <input type="password" id="loginPassword" class="form-control mb-2" placeholder="Password">
+                <button class="btn btn-primary" onclick="login()">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/bootstrap.bundle.js"></script>
+<script src="js/api.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
